@@ -1,14 +1,31 @@
-<x-layout> 
-    <h1> daftar siswa</h1>
-    @foreach ( $data as  $hasil)
-       <li>
-        <h3>
-            {{ $hasil['nama'] }} - {{ $hasil['nilai']}}  - {{ $hasil['id'] }}
-        </h3>
-       </li>
-    @endforeach
+<x-layout>
+<div class="overflow-x-auto rounded border border-gray-300 shadow-sm dark:border-gray-600">
+  <table class="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700">
+    <thead class="ltr:text-left rtl:text-right">
+      <tr class="*:font-medium *:text-gray-900 dark:*:text-white">
+        <th class="px-3 py-2 whitespace-nowrap">Nama</th>
+        <th class="px-3 py-2 whitespace-nowrap">Tanggal lahir</th>
+        <th class="px-3 py-2 whitespace-nowrap">Nilai</th>
+        <th class="px-3 py-2 whitespace-nowrap">id</th>
+      </tr>
+    </thead>
+
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        @foreach ($data as $hasil )
+            
+        <tr class="*:text-gray-900 *:first:font-medium dark:*:text-white">
+          <td class="px-3 py-2 whitespace-nowrap">{{$hasil['nama']}}</td>
+          <td class="px-3 py-2 whitespace-nowrap">{{$hasil['tanggal-lahir']}}</td>
+          <td class="px-3 py-2 whitespace-nowrap">{{$hasil['nilai']}}</td>
+          <td class="px-3 py-2 whitespace-nowrap">{{$hasil['id']}}</td>
+        </tr>
+        @endforeach
+
+ 
+    </tbody>
+  </table>
+</div>
 <x-slot:footer>
     <strong>siswa Page</strong>
 </x-slot:footer>
 </x-layout>
-

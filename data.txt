@@ -1,0 +1,10 @@
+model di laravel adalah representasi struktur data dri tabel database .
+model bertanggung jawab untuk CRUD,menyimpan dtaa ke tabel ,menerapkan relasi antar tabel
+
+
+Eloquent ORM(object relational mapping)
+= cara Laravel untuk berinteraksi dengan data base jadi bekerja dengan modelnya
+fitur laeravel yang memungkinkan untuk berinteraksi dengan database menggunakan sintaks php yang bersih
+
+
+factory di laravel untuk membuat data dummy/palsu dalam jumlah banyak secara otomatis ini sangat berguna pada saat testing ,isi database,prototipe aplikasi
