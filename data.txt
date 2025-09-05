@@ -8,3 +8,19 @@ fitur laeravel yang memungkinkan untuk berinteraksi dengan database menggunakan 
 
 
 factory di laravel untuk membuat data dummy/palsu dalam jumlah banyak secara otomatis ini sangat berguna pada saat testing ,isi database,prototipe aplikasi
+
+bisa pakai php artisan make:model (nama databasenya) -mfs
+note: mfs itu migration factory seeder
+migration berarti langsung bikin migrasinya dan factory itu data dummy
+
+seeder adalah fitur untuk isi tabel database dengan data awal secara otomatis baik itu data dummy atau data tetep
+jadi factory untuk cetakan data atau template
+
+seeder untuk eksekutor  yang memanggil factory terus disimpan ke data nya ke database
+
+
+
+Controller di laravel adalah bagian dari pattern MVC yang bertugas menangani logika aplikasi dan menghubungkan anatar model dam view
+controller menerima permintaan dari user,mengolahnya dan mengembalikan respon yang sesuai
+
+singkatnya model = data ,view = tampilan dan controller =  pengatur alur

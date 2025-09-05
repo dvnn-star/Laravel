@@ -7,6 +7,7 @@
         <th class="px-3 py-2 whitespace-nowrap">Tanggal lahir</th>
         <th class="px-3 py-2 whitespace-nowrap">Nilai</th>
         <th class="px-3 py-2 whitespace-nowrap">id</th>
+        <th class="px-3 py-2 whitespace-nowrap">Detail S</th>
       </tr>
     </thead>
 
@@ -15,9 +16,11 @@
             
         <tr class="*:text-gray-900 *:first:font-medium dark:*:text-white">
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['nama']}}</td>
-          <td class="px-3 py-2 whitespace-nowrap">{{$hasil['tanggal-lahir']}}</td>
+          <td class="px-3 py-2 whitespace-nowrap">{{$hasil['tanggal_lahir']}}</td>
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['nilai']}}</td>
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['id']}}</td>
+          <td class="px-3 py-2 whitespace-nowrap"> <a href="/siswa/{{ $hasil['id'] }}" >Detail selengkapnya</a></td>
+
         </tr>
         @endforeach
 

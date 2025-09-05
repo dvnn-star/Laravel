@@ -3,36 +3,29 @@
     <div class="flow-root">
   <dl class="-my-3 divide-y divide-gray-200 rounded border border-gray-200 text-sm">
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Title</dt>
+      <dt class="font-medium text-gray-100">Nama</dt>
 
-      <dd class="text-gray-700 sm:col-span-2">Mr</dd>
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa['nama']}}</dd>
+    </div>
+
+
+    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+      <dt class="font-medium text-gray-100">Tanggal Lahir</dt>
+
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa['tanggal_lahir']}}</dd>
     </div>
 
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Name</dt>
+      <dt class="font-medium text-gray-100">nilai</dt>
 
-      <dd class="text-gray-700 sm:col-span-2">John Frusciante</dd>
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa['nilai']}}</dd>
     </div>
 
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Occupation</dt>
+      <dt class="font-medium text-gray-100">id</dt>
 
-      <dd class="text-gray-700 sm:col-span-2">Guitarist</dd>
-    </div>
-
-    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Salary</dt>
-
-      <dd class="text-gray-700 sm:col-span-2">$1,000,000+</dd>
-    </div>
-
-    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Bio</dt>
-
-      <dd class="text-gray-700 sm:col-span-2">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et facilis debitis explicabo
-        doloremque impedit nesciunt dolorem facere, dolor quasi veritatis quia fugit aperiam
-        aspernatur neque molestiae labore aliquam soluta architecto?
+      <dd class="text-gray-100 sm:col-span-2">
+        {{ $siswa['id'] }}
       </dd>
     </div>
   </dl>
