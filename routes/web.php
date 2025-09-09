@@ -15,7 +15,13 @@ Route::get('/delvin/about',function(){
 
 Route::get('/siswa',[siswacontroller::class,'index'])->name('siswa.index');
 
-// Route wildcard 
+Route::post('/siswa',[siswacontroller::class,'store'])->name('siswa.store');
+
+Route::get('/siswa/create',[siswacontroller::class,'create'])->name('siswa.create');
+
+
+
+// Route wildcard harus paling bawah agar /siswa/{ini} yang ini ga kemakan sama {id}
 Route::get('/siswa/{id}',[siswacontroller::class,'show'])->name('siswa.show');
 
 

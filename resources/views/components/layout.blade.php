@@ -28,14 +28,19 @@
             <x-navlink :active="request()->is('/') " class="text-gray-500 transition hover:text-gray-500/75" href="/"> Home </x-navlink>
           </li>
           <li>
-            <x-navlink href="{{ route('about') }}" :active="request()->is('about') " class="text-gray-500 transition hover:text-gray-500/75" > About </x-navlink>
+            <x-navlink  :active="request()->routeIs('about') " class="text-gray-500 transition hover:text-gray-500/75" 
+            href="{{ route('about') }}"
+              > About </x-navlink>
           </li>
           <li>
           <x-navlink  :active="request()->is('contact')"
              class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('contact') }}"> Contact </x-navlink>
           </li>
           <li>
-            <x-navlink :active="request()->is('siswa')" class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('siswa.index') }}"> DaftarSiswa </x-navlink >
+            <x-navlink :active="request()->routeIs('siswa.index')" class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('siswa.index') }}"> DaftarSiswa </x-navlink >
+            </li>
+             <li>
+            <x-navlink :active="request()->routeIs('siswa.create')" class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('siswa.create') }}"> Create Siswa </x-navlink >
             </li>
 
         </ul>
