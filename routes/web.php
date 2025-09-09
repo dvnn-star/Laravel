@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\siswacontroller;
 use App\Models\siswa;
 use Illuminate\Support\Facades\Route;
 
@@ -7,22 +8,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about',function(){
+Route::get('/delvin/about',function(){
     return view('about');
-});
+})->name('about');
 
 
-Route::get('/siswa',function(){
-    $data =siswa::orderBy('nilai','asc')->get();
-   return view('siswa.index',['data' => $data]);
-});
+Route::get('/siswa',[siswacontroller::class,'index'])->name('siswa.index');
 
 // Route wildcard 
-Route::get('/siswa/{id}',function($id){
-    // dd($id);
-    $siswa = siswa::findOrFail($id);
-    return view('siswa.show',['siswa' => $siswa]);
-});
+Route::get('/siswa/{id}',[siswacontroller::class,'show'])->name('siswa.show');
 
 
 
@@ -40,4 +34,4 @@ Route::get('/contact',function(){
     // return view('contact.contact') -> with('nama',$nama)-> with('umur',$umur);
 
     
-});
+})->name('contact');

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Mentor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,8 @@ class siswaFactory extends Factory
             'nama' => fake()->name(),
             'tanggal_lahir' => fake()->dateTimeBetween('-20 years,','-18 years')->format('Y-m-d'),
             'nilai' => fake()->numberBetween(0,100),
-            'npm' => fake()->randomNumber(4,true)
+            'npm' => fake()->randomNumber(4,true),
+            'mentor_id' => Mentor::inRandomOrder()->first()->id
         ];
     }
 }

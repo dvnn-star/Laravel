@@ -19,7 +19,7 @@
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['tanggal_lahir']}}</td>
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['nilai']}}</td>
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['id']}}</td>
-          <td class="px-3 py-2 whitespace-nowrap"> <a href="/siswa/{{ $hasil['id'] }}" >Detail selengkapnya</a></td>
+          <td class="px-3 py-2 whitespace-nowrap"> <a href="{{ route('siswa.show',$hasil['id']) }}" >Detail selengkapnya</a></td>
 
         </tr>
         @endforeach
@@ -27,6 +27,11 @@
  
     </tbody>
   </table>
+</div>
+{{-- pagination doang belom dengan search live pakai links () --}}
+{{-- kalo mau pake query  parameter jadi pake appends()request() --}}
+<div class="py-10">
+  {{ $data->appends(request()->query())->links() }}
 </div>
 <x-slot:footer>
     <strong>siswa Page</strong>

@@ -5,20 +5,20 @@
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
       <dt class="font-medium text-gray-100">Nama</dt>
 
-      <dd class="text-gray-100 sm:col-span-2">{{$siswa['nama']}}</dd>
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa->nama}}</dd>
     </div>
 
 
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
       <dt class="font-medium text-gray-100">Tanggal Lahir</dt>
 
-      <dd class="text-gray-100 sm:col-span-2">{{$siswa['tanggal_lahir']}}</dd>
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa->tanggal_lahir}}</dd>
     </div>
 
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
       <dt class="font-medium text-gray-100">nilai</dt>
 
-      <dd class="text-gray-100 sm:col-span-2">{{$siswa['nilai']}}</dd>
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa->nilai}}</dd>
     </div>
 
     <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
@@ -28,6 +28,11 @@
         {{ $siswa['id'] }}
       </dd>
     </div>
+    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+      <dt class="font-medium text-gray-100">Mentor</dt>
+
+      <dd class="text-gray-100 sm:col-span-2">{{$siswa->mentor->nama}}</dd>
+    </div
   </dl>
 </div>
 <x-slot:footer>

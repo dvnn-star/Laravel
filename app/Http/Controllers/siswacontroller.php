@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\siswa;
 use Illuminate\Http\Request;
 
 class siswacontroller extends Controller
@@ -11,7 +12,9 @@ class siswacontroller extends Controller
      */
     public function index()
     {
-        //
+        // kalo mau pagination get nya diganti dengan paginate
+    $data =siswa::orderBy('nilai','asc')->paginate(10);
+    return view('siswa.index',['data' => $data]);
     }
 
     /**
@@ -35,7 +38,9 @@ class siswacontroller extends Controller
      */
     public function show(string $id)
     {
-        //
+    // dd($id);
+    $siswa = siswa::with('mentor')->findOrFail($id);
+    return view('siswa.show',['siswa' => $siswa]);
     }
 
     /**
