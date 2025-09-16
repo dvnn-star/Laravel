@@ -20,9 +20,10 @@ Route::post('/siswa',[siswacontroller::class,'store'])->name('siswa.store');
 Route::get('/siswa/create',[siswacontroller::class,'create'])->name('siswa.create');
 
 
+Route::delete('/siswa/{siswa}',[siswacontroller::class,'destroy'])->name('siswa.destroy');
 
 // Route wildcard harus paling bawah agar /siswa/{ini} yang ini ga kemakan sama {id}
-Route::get('/siswa/{id}',[siswacontroller::class,'show'])->name('siswa.show');
+Route::get('/siswa/{siswa}',[siswacontroller::class,'show'])->name('siswa.show');
 
 
 

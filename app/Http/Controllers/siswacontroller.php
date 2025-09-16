@@ -37,7 +37,7 @@ class siswacontroller extends Controller
             'tanggal_lahir' => ['required','date'],
             'nilai' => ['required','int','min:1'],
             'npm' => ['required','int','min:4'],
-            'mentor_id' => ['required','exists:mentor,id']
+            'mentor_id' => ['required','exists:mentors,id']
         ]);
 
         siswa::create([
@@ -48,16 +48,17 @@ class siswacontroller extends Controller
             'mentor_id' => $validasi['mentor_id']
         ]);
 
-        return redirect()->route('siswa.index');
+        return redirect()->route('siswa.index')->with('success','data berhasil dibuat');
     }
 
-    /**
+    /** 
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(siswa $siswa)
     {
     // dd($id);
-    $siswa = siswa::with('mentor')->findOrFail($id);
+    // $siswa = siswa::with('mentor')->findOrFail($id);
+    $siswa->load('mentor');
     return view('siswa.show',['siswa' => $siswa]);
     }
 
@@ -66,7 +67,7 @@ class siswacontroller extends Controller
      */
     public function edit(string $id)
     {
-        //
+    
     }
 
     /**
@@ -80,8 +81,12 @@ class siswacontroller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    // route model binding 
+    public function destroy(siswa $siswa)
+    {   //jadi ga perlu query lagi (findorfail) dengan route model  binding
+        // $siswa = siswa::findOrFail($id);
+        $siswa->delete();
+
+        return redirect()->route('siswa.index')->with('success','data berhasil dihapus');
     }
 }

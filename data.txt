@@ -24,3 +24,13 @@ Controller di laravel adalah bagian dari pattern MVC yang bertugas menangani log
 controller menerima permintaan dari user,mengolahnya dan mengembalikan respon yang sesuai
 
 singkatnya model = data ,view = tampilan dan controller =  pengatur alur
+
+
+Flash Message
+adalah pesan sementara yang disimpan dalam session dan hanya tampil sekali setelah redirect.biasanya digunakan untuk memberi feedback kepada user setelah aksi seperti:
+-menyimpan data,mengupdate data,menghapus data,gagal login dll
+
+
+Route model binding
+fitur pada framework sepeeti laravel yang secara otomatis akan mengambil model eloquent berdasarkan parameter yang ada di url
+,sehingga kamu tidak perlu lagi melakukan query secara manual

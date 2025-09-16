@@ -33,6 +33,7 @@
 <div class="py-10">
   {{ $data->appends(request()->query())->links() }}
 </div>
+
 <x-slot:footer>
     <strong>siswa Page</strong>
 </x-slot:footer>

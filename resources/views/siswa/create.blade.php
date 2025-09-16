@@ -14,8 +14,12 @@
           id="nama"
           name="nama"
           placeholder="Masukkan nama"
+          value="{{ old('nama') }}"
           class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm
-          @error('nama') is invalid @enderror"
+        
+          
+      
+          "
           
         />
       </div>
@@ -30,8 +34,9 @@
           type="date"
           id="tanggal_lahir"
           name="tanggal_lahir"
+          value="{{ old('tanggal_lahir') }}"
           class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm
-          @error('tanggal_lahir') is invalid @enderror "
+           "
         />
       </div>
        @error('tanggal_lahir')
@@ -47,8 +52,9 @@
           id="npm"
           name="npm"
           placeholder="Masukkan NPM"
+          value="{{ old('npm') }}"
           class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm
-           @error('npm') is invalid @enderror "
+           "
           
         />
       </div>
@@ -66,8 +72,9 @@
           placeholder="0 - 100"
           min="0"
           max="100"
+          value="{{ old('nilai') }}"
           class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm
-            @error('nilai') is invalid @enderror  "
+              "
           
         />
       </div>
@@ -78,12 +85,13 @@
 
       <!-- Mentor -->
       <div>
-        <label for="mentor" class="block text-sm font-medium text-gray-700">Mentor</label>
+        <label for="mentor_id" class="block text-sm font-medium text-gray-700">Mentor</label>
         <select
           id="mentor_id"
           name="mentor_id"
+          value="{{ old('mentor_id') }}"
           class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm
-          @error('mentor_id') is invalid @enderror  "
+          "
           
         >
         
