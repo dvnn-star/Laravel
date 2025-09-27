@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -16,10 +17,16 @@ class AuthController extends Controller
             'password'=> 'required|string|min:6'
         ]); 
         $hasil = Auth::attempt($credentials);
+        $admin = Auth::user();
+       
+        // if(!Gate::allows('admin-only')){
+        //     return view('siswa.index',compact('siswas'));
+        // }
         if ($hasil) {
             $request->session()->regenerate();
             return redirect()->route('siswa.index');
         }
+        
         // untuk kirim validation exception
         throw ValidationException::withMessages([
             'email' => 'email or password is incorrect'

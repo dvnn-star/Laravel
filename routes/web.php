@@ -43,7 +43,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->controller(siswacontroller::class,)->group(function(){
     Route::get('/', function () {
         return view('welcome');
-    });
+    })->name('index');
     
     Route::get('/about',function(){
         return view('about');
@@ -72,7 +72,7 @@ Route::middleware('auth')->controller(siswacontroller::class,)->group(function()
         
     })->name('contact');
     Route::delete('/siswa/{siswa}','destroy')->name('siswa.destroy');
-
+    
     Route::get('/siswa/edit/{siswa}','edit')->name('siswa.edit');
     
     Route::put('/siswa/{id}','update')->name('siswa.update');

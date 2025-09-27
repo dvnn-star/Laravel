@@ -20,9 +20,17 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        User::firstOrCreate([
+            'name' => 'admin',
+            'email' => 'delvintan@gmail.com',
+            'password' => 'delvin12',
+            'roles' => 'admin'
+        ]);
+
         $this->call([
             MentorSeeder::class,
-            siswaSeeder::class
+            siswaSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
