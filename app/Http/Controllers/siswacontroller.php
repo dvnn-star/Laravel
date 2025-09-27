@@ -65,9 +65,11 @@ class siswacontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(siswa $siswa)
     {
-    
+        $mentor = Mentor::all();
+        $siswa->load('mentor');
+        return view('siswa.edit',['siswa' => $siswa,'mentors' => $mentor]);
     }
 
     /**
@@ -75,7 +77,17 @@ class siswacontroller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validasi = $request->validate([
+            'nama' => ['required','string','min:3'],
+            'tanggal_lahir' => ['required','date'],
+            'nilai' => ['required','int','min:1'],
+            'npm' => ['required','int','min:4'],
+            'mentor_id' => ['required','exists:mentors,id']
+        ]);
+        $siswa = siswa::findOrFail($id);
+        $siswa->update($validasi);
+        return redirect()->route('siswa.index');
+
     }
 
     /**

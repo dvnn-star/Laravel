@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // $middleware->redirectUsersTo('/contact');
+
+        // // using a closure  atau arrow function
+        // $middleware->redirectUsersTo(fn (Request $request) => route('contact'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

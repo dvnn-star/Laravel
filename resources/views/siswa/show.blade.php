@@ -40,6 +40,10 @@
     @method('DELETE')
     <button class="font-bold border py-1 rounded-2xl px-1 text-3xl text-blue-100" type="submit">Delete</button>
   </form>
+  
+
+  <a href="{{ route('siswa.edit',$siswa->id) }}" class="font-bold text-2xl border rounded-2xl p-3"> Edit data</a>
+
 <x-slot:footer>
     <strong>contact Page</strong>
 </x-slot:footer>

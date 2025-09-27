@@ -13,7 +13,6 @@
 
     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
         @foreach ($data as $hasil )
-            
         <tr class="*:text-gray-900 *:first:font-medium dark:*:text-white">
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['nama']}}</td>
           <td class="px-3 py-2 whitespace-nowrap">{{$hasil['tanggal_lahir']}}</td>
@@ -32,7 +31,7 @@
 {{-- kalo mau pake query  parameter jadi pake appends()request() --}}
 <div class="py-10">
   {{ $data->appends(request()->query())->links() }}
-</div>
+</div>  
 
 <x-slot:footer>
     <strong>siswa Page</strong>

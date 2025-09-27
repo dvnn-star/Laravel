@@ -1,11 +1,13 @@
 {{-- layout fungsinya agar mempergampang --}}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>layout</title>
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -69,19 +71,36 @@
 
       <div class="flex items-center gap-4">
         <div class="sm:flex sm:gap-4">
+          {{-- untuk yang tidak terautentikasi --}}
+          @guest
+            
           <a
           class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-          href="#"
+           href="{{ route('auth.login') }}"
           >
           Login
           </a>
 
           <a
             class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-            href="#"
+            href="{{ route('auth.register') }}"
           >
           Register
           </a>
+          @endguest
+          {{-- yang terauntetikasi --}}
+          @auth
+            
+          <span class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+          >
+            {{ Auth::user()->name }}
+           
+          </span>
+          <form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button type="submit" class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700">logout</button>
+          </form>
+          @endauth
         </div>
 
         <button
